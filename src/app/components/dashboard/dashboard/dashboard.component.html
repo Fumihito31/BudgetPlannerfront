@@ -1,0 +1,19 @@
+<div class="container">
+    <h2>Dashboard</h2>
+    <div>Total Income: {{ totalIncome }}</div>
+    <h3>Expenses</h3>
+    <ul>
+      <li *ngFor="let expense of expenses">
+        {{ expense.description }} - {{ expense.amount }} - {{ expense.date | date: 'medium' }}
+        <button (click)="deleteExpense(expense.id)" class="btn btn-danger">Delete</button>
+      </li>
+    </ul>
+    <h3>Incomes</h3>
+    <ul>
+      <li *ngFor="let income of incomes">
+        {{ income.source }} - {{ income.amount }} - {{ income.date | date: 'medium' }}
+        <button (click)="deleteIncome(income.id)" class="btn btn-danger">Delete</button>
+      </li>
+    </ul>
+  </div>
+  
